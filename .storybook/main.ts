@@ -3,8 +3,18 @@ import type { StorybookConfig } from "@storybook/svelte-vite";
 const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx|svelte)"],
   addons: [
-    { name: "@storybook/addon-svelte-csf", options: { legacyTemplate: false } },
-    "@storybook/addon-test"
+    "@storybook/addon-links",
+    "@storybook/sveltekit",
+    // "storybook-addon-pseudo-states",
+    // "storybook-addon-mock-date",
+    {
+      name: "@storybook/addon-svelte-csf",
+      options: {
+        legacyTemplate: false,
+      },
+    },
+    "@storybook/addon-docs",
+    "@storybook/addon-vitest",
   ],
   framework: "@storybook/svelte-vite",
   docs: {},

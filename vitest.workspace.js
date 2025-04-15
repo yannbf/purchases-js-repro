@@ -3,11 +3,12 @@ import { fileURLToPath } from "node:url";
 
 import { defineWorkspace } from "vitest/config";
 
-import { storybookTest } from "@storybook/addon-test/vitest-plugin";
+import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 
 const dirname =
   typeof __dirname !== "undefined"
-    ? __dirname
+    ? // eslint-disable-next-line no-undef
+      __dirname
     : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/writing-tests/test-addon
